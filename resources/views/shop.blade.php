@@ -14,7 +14,6 @@
                             <div>{{$item->name}}</div>
                             <div>{{$item->size}}</div>
                             <div>{{$item->price}}</div>
-                            <div>{{$delivery->price}}</div>
 
                         @empty
                             <h3>Nothing to buy</h3>

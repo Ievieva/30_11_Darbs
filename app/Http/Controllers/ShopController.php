@@ -4,11 +4,15 @@
 namespace App\Http\Controllers;
 
 
+use App\Models\Jeans;
+
 class ShopController
 {
     public function index()
     {
+        $jeans = Jeans::all();
 
+        return view('shop.index', ['jeans' => $jeans]);
     }
 
     public function create()
