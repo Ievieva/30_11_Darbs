@@ -10,7 +10,7 @@ class ShopController
 {
     public function index()
     {
-        $jeans = Jeans::all();
+        $jeans = Jeans::latest()->get();
 
         return view('shop.index', ['jeans' => $jeans]);
     }
@@ -25,9 +25,11 @@ class ShopController
 
     }
 
-    public function show()
+    public function show($id)
     {
+        $article = Jeans::find($id);
 
+        return view('shop.show', ['jeans' => $jeans]);
     }
 
     public function edit()

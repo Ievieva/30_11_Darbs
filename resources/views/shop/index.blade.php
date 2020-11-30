@@ -11,9 +11,9 @@
 
                         @forelse($jeans as $item)
 
-                            <div>{{$item->name}}</div>
+                            <a href="{{$item->name}}"></a>
                             <div>{{$item->size}}</div>
-                            <div>{{$item->price}}</div>
+                            <div>${{$item->price/100}}</div>
 
                         @empty
                             <h3>Nothing to buy</h3>
