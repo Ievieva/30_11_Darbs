@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateJeansTable extends Migration
+class CreateProductsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,11 @@ class CreateJeansTable extends Migration
      */
     public function up()
     {
-        Schema::create('jeans', function (Blueprint $table) {
+        Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->string('name');
             $table->string('size');
-            $table->boolean('in_stock');
+            $table->integer('weight');
             $table->bigInteger('price');
             $table->timestamps();
         });

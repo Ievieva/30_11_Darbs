@@ -15,6 +15,7 @@ class CreateDeliveriesTable extends Migration
     {
         Schema::create('deliveries', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
             $table->string('size');
             $table->bigInteger('price');
             $table->timestamps();
