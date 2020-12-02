@@ -28,14 +28,25 @@
                                 <td>{{ $product->getWeight() }}</td>
                             </tr>
                         </table>
-                        <h5>Delivery</h5>
-                        <ul>
-                            @foreach($product->deliveries as $delivery)
+                        <br>
+                        <div>
+                            <h5>Delivery</h5>
+                            <form>
+                                @csrf
+                                @foreach($product->deliveries as $delivery)
 
-                                <li>{{ $delivery->name }} {{ $delivery->getPrice() }}</li>
+                                    <input
+                                        type="radio"
+                                        id="{{ $delivery->id }}"
+                                        name="delivery"
+                                        value="{{ $delivery }}"
+                                    >
+                                        {{ $delivery->name }} {{ $delivery->getPrice() }}
+                                    </input>
 
-                            @endforeach
-                        </ul>
+                                @endforeach
+                            </form>
+                        </div>
                     </div>
                 </div>
                 <a href="{{ route('products.edit', $product) }}" class="btn btn-sm btn-warning">
